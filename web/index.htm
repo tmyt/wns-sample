@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8"></meta>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0"></meta>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript">
+			function form_submit(){
+				$.post("https://wns.azure-mobile.net/api/broadcast",
+					{
+						"title": $("#params-title").val(),
+						"content": $("#params-content").val()
+					}
+				).done(function(data){
+					$("#params-title").val("");
+					$("#params-content").val("");
+				});
+				
+				return false;
+			}
+		</script>
+	</head>
+	<body>
+		<h1>WNSテストページ</h1>
+		<form id="params" onsubmit="return form_submit()">
+			<table>
+				<tr>
+					<th><label for="params-title">タイトル:</label></th>
+					<td><input type="text" name="title" id="params-title" /></td>
+				</tr>
+				<tr>
+					<th><label for="params-content">本文:</label></th>
+					<td><input type="text" name="content" id="params-content" /></td>
+				</tr>
+			</table>
+			<input type="submit" value="送信"/>
+		</form>
+	</body>
+</html>

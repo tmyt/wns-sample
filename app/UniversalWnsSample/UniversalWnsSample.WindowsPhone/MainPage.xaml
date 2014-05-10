@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="UniversalWnsSample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UniversalWnsSample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Pivot Title="WNS TEST">
+            <!-- configure -->
+            <PivotItem Header="configure">
+                <StackPanel>
+                    <StackPanel Margin="0,0,0,10">
+                        <TextBlock Text="Friendly name" FontSize="20" Style="{StaticResource TitleTextBlockStyle}"/>
+                        <TextBox x:Name="FriendlyName" Width="200" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Margin="0,10">
+                        <TextBlock Text="Registration Control" FontSize="20" Style="{StaticResource TitleTextBlockStyle}"/>
+                        <Button Content="Register" Click="RegisterClick"/>
+                        <Button Content="Unregister" Click="UnregisterClick"/>
+                    </StackPanel>
+                </StackPanel>
+            </PivotItem>
+
+            <!-- recent -->
+            <PivotItem Header="recent">
+                <StackPanel>
+                    <StackPanel Margin="0,0,0,10">
+                        <TextBlock Text="History" FontSize="20" Style="{StaticResource TitleTextBlockStyle}"/>
+                        <Button Content="Clear" Click="HistoryClearClick"></Button>
+                    </StackPanel>
+                </StackPanel>
+            </PivotItem>
+        </Pivot>
+
+    </Grid>
+</Page>
